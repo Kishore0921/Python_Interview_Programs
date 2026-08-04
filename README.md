@@ -1,4 +1,4 @@
-# 🐍 Python Interview Programs
+#  Python Interview Programs
 
 A comprehensive collection of Python programs designed for **placement preparation**, **technical interviews**, and **logical thinking practice**.
 
@@ -6,7 +6,7 @@ This repository contains beginner to intermediate Python programs commonly asked
 
 ---
 
-## 📌 Objectives
+##  Objectives
 
 - Strengthen Python fundamentals
 - Improve problem-solving skills
@@ -16,7 +16,7 @@ This repository contains beginner to intermediate Python programs commonly asked
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 
 ```
 Python_Interview_Programs/
@@ -35,7 +35,7 @@ Python_Interview_Programs/
 
 ---
 
-# 📚 Topics Covered
+#  Topics Covered
 
 ## 1️⃣ Basic Programs
 
@@ -157,13 +157,13 @@ Examples:
 
 ---
 
-# 💻 Requirements
+#  Requirements
 
 - Python 3.x
 
 ---
 
-# ▶️ How to Run
+# ▶ How to Run
 
 Clone the repository
 
@@ -185,7 +185,7 @@ python filename.py
 
 ---
 
-# 📈 Progress
+#  Progress
 
 - [ ] Basic Programs
 - [ ] Number Programs
@@ -199,7 +199,7 @@ python filename.py
 
 ---
 
-# 🎯 Target Audience
+#  Target Audience
 
 - Engineering Students
 - Placement Preparation
@@ -209,7 +209,7 @@ python filename.py
 
 ---
 
-# 🚀 Future Updates
+#  Future Updates
 
 - Recursion Programs
 - Dynamic Programming (Basic)
@@ -239,8 +239,8 @@ b = float(input("Enter second number: "))
 result = a + b
 print(f"Sum: {result}")
 
-## ⭐ Support
+## Support
 
-If you find this repository useful, consider giving it a ⭐.
+If you find this repository useful, consider giving it a .
 
-Happy Coding! 🚀
+Happy Coding! 
