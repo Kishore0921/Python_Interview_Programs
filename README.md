@@ -21,141 +21,252 @@ This repository contains beginner to intermediate Python programs commonly asked
 ```
 Python_Interview_Programs/
 │
+├── README.md
 ├── 01_Basic_Programs/
 ├── 02_Number_Programs/
 ├── 03_Pattern_Programs/
 ├── 04_String_Programs/
 ├── 05_List_Programs/
-├── 06_OOP/
-├── 07_File_Handling/
-├── 08_Exception_Handling/
-├── 09_Placement_Assessment_Questions/
-└── README.md
+├── 06_Tuple_Programs/
+├── 07_Set_Programs/
+├── 08_Dictionary_Programs/
+├── 09_Function_Programs/
+├── 10_Recursion/
+├── 11_File_Handling/
+├── 12_Exception_Handling/
+├── 13_OOP/
+├── 14_Searching/
+├── 15_Sorting/
+├── 16_DSA_Basics/
+└── 17_SQL_Programs/
 ```
 
----
+# 📚 Topics Covered
 
-#  Topics Covered
+## 1️⃣ Basic Python Programs
 
-## 1️⃣ Basic Programs
-
-- Hello World
-- Add Two Numbers
-- Swap Two Numbers
-- Even / Odd
-- Leap Year
-- Largest of Three Numbers
-- Calculator
+* Hello World
+* Variables
+* Data Types
+* Type Conversion
+* Operators
+* Input / Output
+* Even / Odd
+* Positive / Negative
+* Largest of Three Numbers
 
 ---
 
 ## 2️⃣ Number Programs
 
-- Prime Number
-- Armstrong Number
-- Palindrome Number
-- Perfect Number
-- Strong Number
-- Fibonacci Series
-- Factorial
-- GCD
-- LCM
-- Prime Digit Sum
-- Product of Prime Digits
+* Prime Number
+* Palindrome Number
+* Armstrong Number
+* Factorial
+* Fibonacci Series
+* Perfect Number
+* Strong Number
+* Automorphic Number
+* Reverse Number
+* Sum of Digits
+* Count Digits
 
 ---
 
 ## 3️⃣ Pattern Programs
 
-- Right Triangle
-- Pyramid
-- Inverted Pyramid
-- Diamond
-- Floyd's Triangle
-- Pascal's Triangle
-- Number Patterns
-- Alphabet Patterns
+* Square Pattern
+* Triangle Pattern
+* Inverted Triangle
+* Pyramid Pattern
+* Number Pattern
+* Alphabet Pattern
 
 ---
 
 ## 4️⃣ String Programs
 
-- Reverse String
-- String Palindrome
-- Anagram
-- Count Vowels
-- Character Frequency
-- First Non-Repeating Character
-- Longest Word
-- Remove Duplicate Characters
+* Reverse String
+* String Palindrome
+* Count Vowels
+* Count Characters
+* Character Frequency
+* Remove Duplicate Characters
+* Anagram
+* Word Count
 
 ---
 
-## 5️⃣ List (Array) Programs
+## 5️⃣ List Programs
 
-- Largest Element
-- Second Largest
-- Linear Search
-- Binary Search
-- Bubble Sort
-- Selection Sort
-- Remove Duplicates
-- Rotate Array
-- Longest Consecutive Sequence
-- Move Zeroes
-- Merge Sorted Arrays
+* Largest Element
+* Smallest Element
+* Second Largest Element
+* Reverse List
+* Remove Duplicates
+* List Sum
+* List Frequency
 
 ---
 
-## 6️⃣ Object-Oriented Programming
+## 6️⃣ Tuple Programs
 
-- Student Class
-- Employee Class
-- Product Class
-- Bank Account
-- Library Management
-- Constructor
-- Inheritance
-- Polymorphism
+* Tuple Operations
+* Tuple to List
+* List to Tuple
+* Tuple Frequency
 
 ---
 
-## 7️⃣ File Handling
+## 7️⃣ Set Programs
 
-- Read File
-- Write File
-- Append File
-- Copy File
-- Count Words
-
----
-
-## 8️⃣ Exception Handling
-
-- try-except
-- Multiple Exceptions
-- Finally Block
-- Raise Exception
-- Custom Exceptions
+* Set Operations
+* Union
+* Intersection
+* Difference
+* Remove Duplicates
 
 ---
 
-## 9️⃣ Placement Assessment Questions
+## 8️⃣ Dictionary Programs
 
-Real coding questions collected from placement assessments and coding rounds.
-
-Examples:
-
-- Prime Digit Sum
-- Longest Consecutive Sequence
-- Student Marks Filter
-- Longest Word
-- Character Frequency
-- Array Rotation
-- Missing Number
-- Product of Prime Digits
+* Dictionary Operations
+* Frequency Count
+* Duplicate Values
+* Dictionary Sorting
+* Merge Dictionaries
 
 ---
+
+## 9️⃣ Function Programs
+
+* Basic Functions
+* Function Arguments
+* Return Values
+* Default Arguments
+* Keyword Arguments
+* Lambda Functions
+
+---
+
+## 🔟 Recursion
+
+* Factorial Using Recursion
+* Fibonacci Using Recursion
+* Sum Using Recursion
+* Reverse String Using Recursion
+
+---
+
+## 1️⃣1️⃣ File Handling
+
+* Read File
+* Write File
+* Append File
+* File Operations
+
+---
+
+## 1️⃣2️⃣ Exception Handling
+
+* try-except
+* Multiple Exceptions
+* finally Block
+* Custom Exceptions
+
+---
+
+## 1️⃣3️⃣ Object-Oriented Programming
+
+* Classes & Objects
+* Constructor
+* Inheritance
+* Polymorphism
+* Encapsulation
+* Abstraction
+
+---
+
+## 1️⃣4️⃣ Searching
+
+* Linear Search
+* Binary Search
+
+---
+
+## 1️⃣5️⃣ Sorting
+
+* Bubble Sort
+* Selection Sort
+* Insertion Sort
+* Merge Sort
+
+---
+
+## 1️⃣6️⃣ DSA Basics
+
+### Arrays
+
+* Array Basics
+* Array Operations
+
+### Stack
+
+* Stack Operations
+* Stack Implementation
+
+### Queue
+
+* Queue Operations
+* Queue Implementation
+
+### Linked List
+
+* Linked List Basics
+* Linked List Operations
+
+### Hashing
+
+* Hashing Basics
+* Hash Table Operations
+
+---
+
+## 1️⃣7️⃣ SQL Programs
+
+* Basic SQL Queries
+* SELECT & WHERE
+* Joins
+* GROUP BY
+* Subqueries
+* Constraints
+
+---
+
+## 🎯 Placement Preparation
+
+This repository focuses on **Python fundamentals, problem-solving, DSA basics, OOP, SQL, and commonly asked coding patterns** for placement assessments and technical interviews.
+
+### Practice Areas
+
+* Basic Programming
+* Number Problems
+* Pattern Problems
+* String Manipulation
+* Lists & Arrays
+* Tuples
+* Sets
+* Dictionaries
+* Functions
+* Recursion
+* File Handling
+* Exception Handling
+* OOP
+* Searching
+* Sorting
+* DSA
+* SQL
+
 
 #  Requirements
 
