@@ -296,25 +296,25 @@ python filename.py
 
 ---
 
-#  Progress
+## Progress
 
-[x] 01_Basic_Programs
-[x] 02_Number_Programs
-[x] 03_Pattern_Programs
-[x] 04_String_Programs
-[x] 05_List_Programs
-[x] 06_Tuple_Programs
-[x] 07_Set_Programs
-[x] 08_Dictionary_Programs
-[x] 09_Function_Programs
-[ ] 10_Recursion_Programs
-[ ] 11_File_Handling
-[ ] 12_Exception_Handling
-[ ] 13_OOP
-[ ] 14_Searching
-[ ] 15_Sorting
-[ ] 16_DSA_Basics
-[ ] 17_SQL_Programs
+- [x] 01_Basic_Programs
+- [x] 02_Number_Programs
+- [x] 03_Pattern_Programs
+- [x] 04_String_Programs
+- [x] 05_List_Programs
+- [x] 06_Tuple_Programs
+- [x] 07_Set_Programs
+- [x] 08_Dictionary_Programs
+- [x] 09_Function_Programs
+- [ ] 10_Recursion_Programs
+- [ ] 11_File_Handling
+- [ ] 12_Exception_Handling
+- [ ] 13_OOP
+- [ ] 14_Searching
+- [ ] 15_Sorting
+- [ ] 16_DSA_Basics
+- [ ] 17_SQL_Programs
 
 
 ---
