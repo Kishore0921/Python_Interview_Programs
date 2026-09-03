@@ -326,7 +326,6 @@ python filename.py
 - Python Beginners
 - Coding Interview Aspirants
 - Campus Recruitment Preparation
-- 
 ---
 
 ## Format of every file
