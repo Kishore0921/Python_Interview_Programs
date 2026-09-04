@@ -307,8 +307,8 @@ python filename.py
 - [x] 07_Set_Programs
 - [x] 08_Dictionary_Programs
 - [x] 09_Function_Programs
-- [ ] 10_Recursion_Programs
-- [ ] 11_File_Handling
+- [x] 10_Recursion_Programs
+- [x] 11_File_Handling
 - [ ] 12_Exception_Handling
 - [ ] 13_OOP
 - [ ] 14_Searching
