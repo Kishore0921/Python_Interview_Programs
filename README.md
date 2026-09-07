@@ -309,8 +309,8 @@ python filename.py
 - [x] 09_Function_Programs
 - [x] 10_Recursion_Programs
 - [x] 11_File_Handling
-- [ ] 12_Exception_Handling
-- [ ] 13_OOP
+- [x] 12_Exception_Handling
+- [x] 13_OOP
 - [ ] 14_Searching
 - [ ] 15_Sorting
 - [ ] 16_DSA_Basics
