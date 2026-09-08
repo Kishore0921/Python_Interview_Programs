@@ -311,8 +311,8 @@ python filename.py
 - [x] 11_File_Handling
 - [x] 12_Exception_Handling
 - [x] 13_OOP
-- [ ] 14_Searching
-- [ ] 15_Sorting
+- [x] 14_Searching
+- [x] 15_Sorting
 - [ ] 16_DSA_Basics
 - [ ] 17_SQL_Programs
 
