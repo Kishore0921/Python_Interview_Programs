@@ -1,0 +1,106 @@
+-- ============================================================
+-- Topic: SQL Joins
+-- ============================================================
+--
+-- A JOIN combines rows from two or more tables based on a related
+-- column between them (typically a foreign key referencing a primary
+-- key). Joins are essential once data is normalized across multiple
+-- tables, since related information must be brought back together for
+-- meaningful queries.
+--
+-- Example tables used throughout:
+--   employees(id, name, department_id)
+--   departments(id, department_name)
+
+-- ------------------------------------------------------------
+-- 1. INNER JOIN
+-- ------------------------------------------------------------
+-- Returns only the rows where there is a match in BOTH tables. Rows
+-- without a matching counterpart in the other table are excluded.
+--
+-- Syntax:
+--   SELECT columns
+--   FROM table1
+--   INNER JOIN table2 ON table1.column = table2.column;
+--
+-- Example:
+--   SELECT employees.name, departments.department_name
+--   FROM employees
+--   INNER JOIN departments ON employees.department_id = departments.id;
+
+-- ------------------------------------------------------------
+-- 2. LEFT JOIN (LEFT OUTER JOIN)
+-- ------------------------------------------------------------
+-- Returns ALL rows from the left table, along with matching rows from
+-- the right table. If there's no match, the right table's columns are
+-- NULL for that row.
+--
+-- Example:
+--   SELECT employees.name, departments.department_name
+--   FROM employees
+--   LEFT JOIN departments ON employees.department_id = departments.id;
+--
+-- (This returns every employee, even those with no department
+-- assigned.)
+
+-- ------------------------------------------------------------
+-- 3. RIGHT JOIN (RIGHT OUTER JOIN)
+-- ------------------------------------------------------------
+-- The mirror image of LEFT JOIN: returns ALL rows from the right table,
+-- along with matching rows from the left table. Unmatched left-table
+-- columns are NULL.
+--
+-- Example:
+--   SELECT employees.name, departments.department_name
+--   FROM employees
+--   RIGHT JOIN departments ON employees.department_id = departments.id;
+--
+-- (This returns every department, even those with no employees.)
+
+-- ------------------------------------------------------------
+-- 4. FULL JOIN (FULL OUTER JOIN)
+-- ------------------------------------------------------------
+-- Returns all rows from both tables. Where there's no match on either
+-- side, the missing side's columns are NULL. Effectively a union of
+-- LEFT JOIN and RIGHT JOIN results. (Not supported directly in some
+-- databases, e.g. MySQL — it must be simulated with a UNION of a LEFT
+-- and RIGHT JOIN.)
+--
+-- Example:
+--   SELECT employees.name, departments.department_name
+--   FROM employees
+--   FULL JOIN departments ON employees.department_id = departments.id;
+
+-- ------------------------------------------------------------
+-- 5. SELF JOIN
+-- ------------------------------------------------------------
+-- A table joined with itself — useful for comparing rows within the
+-- same table, such as finding an employee's manager (who is also
+-- stored as an employee in the same table).
+--
+-- Example:
+--   SELECT e.name AS employee_name, m.name AS manager_name
+--   FROM employees e
+--   INNER JOIN employees m ON e.manager_id = m.id;
+
+-- ------------------------------------------------------------
+-- 6. CROSS JOIN
+-- ------------------------------------------------------------
+-- Returns the Cartesian product of both tables — every row from the
+-- first table paired with every row from the second. No ON condition
+-- is used. Result size is (rows in table1) x (rows in table2), so this
+-- is used sparingly and intentionally.
+--
+-- Example:
+--   SELECT employees.name, departments.department_name
+--   FROM employees
+--   CROSS JOIN departments;
+
+-- ------------------------------------------------------------
+-- Why This Matters in Interviews
+-- ------------------------------------------------------------
+-- Joins are one of the most heavily tested SQL topics. Interviewers
+-- frequently ask candidates to explain the difference between INNER
+-- and OUTER joins, predict what NULLs will appear in a LEFT/RIGHT JOIN
+-- result, or write a self-join to model hierarchical relationships
+-- (like an org chart).

@@ -1,0 +1,108 @@
+-- ============================================================
+-- Topic: SQL Constraints
+-- ============================================================
+--
+-- Constraints are rules enforced on table columns to maintain data
+-- accuracy, consistency, and integrity. They prevent invalid data from
+-- ever being inserted or updated into the database.
+
+-- ------------------------------------------------------------
+-- 1. NOT NULL
+-- ------------------------------------------------------------
+-- Ensures a column cannot store a NULL (missing) value — every row must
+-- have a value for that column.
+--
+-- Example:
+--   CREATE TABLE employees (
+--       id INT NOT NULL,
+--       name VARCHAR(50) NOT NULL
+--   );
+
+-- ------------------------------------------------------------
+-- 2. UNIQUE
+-- ------------------------------------------------------------
+-- Ensures all values in a column (or combination of columns) are
+-- distinct — no two rows can share the same value.
+--
+-- Example:
+--   CREATE TABLE employees (
+--       id INT,
+--       email VARCHAR(100) UNIQUE
+--   );
+
+-- ------------------------------------------------------------
+-- 3. PRIMARY KEY
+-- ------------------------------------------------------------
+-- Uniquely identifies each row in a table. A primary key is a
+-- combination of NOT NULL and UNIQUE, and a table can have only one
+-- primary key (though it may span multiple columns — a "composite key").
+--
+-- Example:
+--   CREATE TABLE employees (
+--       id INT PRIMARY KEY,
+--       name VARCHAR(50)
+--   );
+
+-- ------------------------------------------------------------
+-- 4. FOREIGN KEY
+-- ------------------------------------------------------------
+-- Enforces a link between the data in two tables — a column (or
+-- columns) in one table must match a value in the primary key (or
+-- unique key) of another table. This is what makes relational data
+-- "relational," and prevents orphaned references (e.g. an employee
+-- assigned to a department that doesn't exist).
+--
+-- Example:
+--   CREATE TABLE employees (
+--       id INT PRIMARY KEY,
+--       name VARCHAR(50),
+--       department_id INT,
+--       FOREIGN KEY (department_id) REFERENCES departments(id)
+--   );
+
+-- ------------------------------------------------------------
+-- 5. CHECK
+-- ------------------------------------------------------------
+-- Ensures all values in a column satisfy a specific condition.
+--
+-- Example:
+--   CREATE TABLE employees (
+--       id INT PRIMARY KEY,
+--       age INT CHECK (age >= 18)
+--   );
+
+-- ------------------------------------------------------------
+-- 6. DEFAULT
+-- ------------------------------------------------------------
+-- Provides a default value for a column when no value is specified
+-- during insertion.
+--
+-- Example:
+--   CREATE TABLE employees (
+--       id INT PRIMARY KEY,
+--       status VARCHAR(20) DEFAULT 'Active'
+--   );
+
+-- ------------------------------------------------------------
+-- 7. AUTO_INCREMENT / IDENTITY
+-- ------------------------------------------------------------
+-- Automatically generates a unique, incrementing value for a column
+-- (commonly used for primary keys), so the value doesn't need to be
+-- supplied manually on every insert. The exact keyword differs by
+-- database: `AUTO_INCREMENT` in MySQL, `IDENTITY` in SQL Server,
+-- `SERIAL` in PostgreSQL.
+--
+-- Example (MySQL):
+--   CREATE TABLE employees (
+--       id INT AUTO_INCREMENT PRIMARY KEY,
+--       name VARCHAR(50)
+--   );
+
+-- ------------------------------------------------------------
+-- Why This Matters in Interviews
+-- ------------------------------------------------------------
+-- Constraint questions test understanding of data integrity — why a
+-- foreign key prevents "orphaned" rows, the difference between a
+-- PRIMARY KEY and a UNIQUE constraint (a table can have many UNIQUE
+-- columns but only one PRIMARY KEY), and how constraints interact with
+-- real-world database design (normalization, referential integrity).

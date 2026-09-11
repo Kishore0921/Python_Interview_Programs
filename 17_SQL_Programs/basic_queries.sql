@@ -1,0 +1,99 @@
+-- ============================================================
+-- Topic: Basic SQL Queries
+-- ============================================================
+--
+-- SQL (Structured Query Language) is used to create, read, update, and
+-- delete data in relational databases. The four broad categories of SQL
+-- commands are:
+--
+--   DDL (Data Definition Language)  -> CREATE, ALTER, DROP
+--   DML (Data Manipulation Language)-> INSERT, UPDATE, DELETE
+--   DQL (Data Query Language)       -> SELECT
+--   DCL (Data Control Language)     -> GRANT, REVOKE
+--
+-- This file explains the most fundamental statements used to define a
+-- table's structure and manipulate rows within it.
+
+-- ------------------------------------------------------------
+-- 1. CREATE TABLE
+-- ------------------------------------------------------------
+-- Defines a new table and its columns, along with each column's data
+-- type. This is the starting point for storing any structured data.
+--
+-- Syntax:
+--   CREATE TABLE table_name (
+--       column1 datatype,
+--       column2 datatype,
+--       ...
+--   );
+--
+-- Example:
+--   CREATE TABLE employees (
+--       id INT,
+--       name VARCHAR(50),
+--       salary DECIMAL(10, 2)
+--   );
+
+-- ------------------------------------------------------------
+-- 2. INSERT INTO
+-- ------------------------------------------------------------
+-- Adds new rows of data into a table.
+--
+-- Syntax:
+--   INSERT INTO table_name (column1, column2, ...)
+--   VALUES (value1, value2, ...);
+--
+-- Example:
+--   INSERT INTO employees (id, name, salary)
+--   VALUES (1, 'Alice', 55000.00);
+
+-- ------------------------------------------------------------
+-- 3. SELECT
+-- ------------------------------------------------------------
+-- Retrieves data from one or more tables. The most frequently used SQL
+-- statement.
+--
+-- Syntax:
+--   SELECT column1, column2 FROM table_name;
+--   SELECT * FROM table_name;   -- retrieves all columns
+--
+-- Example:
+--   SELECT name, salary FROM employees;
+
+-- ------------------------------------------------------------
+-- 4. UPDATE
+-- ------------------------------------------------------------
+-- Modifies existing rows in a table. Almost always paired with a WHERE
+-- clause — without one, every row in the table is updated.
+--
+-- Syntax:
+--   UPDATE table_name
+--   SET column1 = value1
+--   WHERE condition;
+--
+-- Example:
+--   UPDATE employees
+--   SET salary = 60000.00
+--   WHERE id = 1;
+
+-- ------------------------------------------------------------
+-- 5. DELETE
+-- ------------------------------------------------------------
+-- Removes rows from a table. Like UPDATE, it's almost always paired
+-- with a WHERE clause to avoid deleting every row.
+--
+-- Syntax:
+--   DELETE FROM table_name
+--   WHERE condition;
+--
+-- Example:
+--   DELETE FROM employees
+--   WHERE id = 1;
+
+-- ------------------------------------------------------------
+-- Why This Matters in Interviews
+-- ------------------------------------------------------------
+-- These five statements form the backbone of nearly every SQL
+-- interview question. Interviewers commonly test whether a candidate
+-- remembers to use WHERE with UPDATE/DELETE (a missing WHERE clause is
+-- one of the most common — and dangerous — real-world SQL mistakes).

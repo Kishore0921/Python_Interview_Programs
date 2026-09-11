@@ -1,0 +1,102 @@
+-- ============================================================
+-- Topic: SELECT with WHERE, Filtering, and Sorting
+-- ============================================================
+--
+-- The WHERE clause filters rows so a query only returns those matching
+-- a given condition. Combined with sorting, limiting, and pattern
+-- matching, it's the primary tool for narrowing down query results.
+
+-- ------------------------------------------------------------
+-- 1. Basic WHERE Condition
+-- ------------------------------------------------------------
+-- Filters rows using comparison operators: =, !=, <>, <, >, <=, >=.
+--
+-- Syntax:
+--   SELECT column1, column2 FROM table_name WHERE condition;
+--
+-- Example:
+--   SELECT name, salary FROM employees WHERE salary > 50000;
+
+-- ------------------------------------------------------------
+-- 2. Logical Operators (AND, OR, NOT)
+-- ------------------------------------------------------------
+-- Combine multiple conditions in a single WHERE clause.
+--
+-- Example:
+--   SELECT name FROM employees
+--   WHERE department = 'Sales' AND salary > 40000;
+--
+--   SELECT name FROM employees
+--   WHERE department = 'Sales' OR department = 'Marketing';
+--
+--   SELECT name FROM employees
+--   WHERE NOT department = 'HR';
+
+-- ------------------------------------------------------------
+-- 3. BETWEEN
+-- ------------------------------------------------------------
+-- Checks whether a value falls within an inclusive range.
+--
+-- Example:
+--   SELECT name FROM employees
+--   WHERE salary BETWEEN 40000 AND 60000;
+
+-- ------------------------------------------------------------
+-- 4. IN
+-- ------------------------------------------------------------
+-- Checks whether a value matches any value in a given list — a more
+-- concise alternative to multiple OR conditions.
+--
+-- Example:
+--   SELECT name FROM employees
+--   WHERE department IN ('Sales', 'Marketing', 'HR');
+
+-- ------------------------------------------------------------
+-- 5. LIKE (Pattern Matching)
+-- ------------------------------------------------------------
+-- Matches a value against a pattern using wildcards:
+--   %  -> matches any sequence of characters (including none)
+--   _  -> matches exactly one character
+--
+-- Example:
+--   SELECT name FROM employees WHERE name LIKE 'A%';   -- starts with A
+--   SELECT name FROM employees WHERE name LIKE '%son';  -- ends with son
+--   SELECT name FROM employees WHERE name LIKE '_ohn';  -- 4 letters, ends in "ohn"
+
+-- ------------------------------------------------------------
+-- 6. IS NULL / IS NOT NULL
+-- ------------------------------------------------------------
+-- Checks for missing (NULL) values. NULL cannot be compared using `=`,
+-- since NULL represents "unknown," not a specific value.
+--
+-- Example:
+--   SELECT name FROM employees WHERE manager_id IS NULL;
+
+-- ------------------------------------------------------------
+-- 7. ORDER BY
+-- ------------------------------------------------------------
+-- Sorts the result set by one or more columns, ascending (ASC, the
+-- default) or descending (DESC).
+--
+-- Example:
+--   SELECT name, salary FROM employees
+--   ORDER BY salary DESC;
+
+-- ------------------------------------------------------------
+-- 8. LIMIT
+-- ------------------------------------------------------------
+-- Restricts the number of rows returned — useful for pagination or
+-- "top N" queries. (Some databases use TOP or FETCH FIRST instead.)
+--
+-- Example:
+--   SELECT name, salary FROM employees
+--   ORDER BY salary DESC
+--   LIMIT 5;
+
+-- ------------------------------------------------------------
+-- Why This Matters in Interviews
+-- ------------------------------------------------------------
+-- Filtering and sorting questions test precise understanding of
+-- operator behavior — especially NULL handling (a very common gotcha)
+-- and the difference between AND/OR precedence when conditions are
+-- combined without parentheses.

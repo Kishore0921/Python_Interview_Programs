@@ -1,0 +1,101 @@
+-- ============================================================
+-- Topic: Subqueries (Nested Queries)
+-- ============================================================
+--
+-- A subquery is a query nested inside another SQL query. The inner
+-- query is evaluated first, and its result is used by the outer query.
+-- Subqueries can appear in the SELECT, FROM, or WHERE clause.
+
+-- ------------------------------------------------------------
+-- 1. Subquery in WHERE Clause
+-- ------------------------------------------------------------
+-- The most common use — filtering rows based on the result of another
+-- query.
+--
+-- Example:
+--   SELECT name FROM employees
+--   WHERE salary > (SELECT AVG(salary) FROM employees);
+--
+-- (Finds employees earning more than the company-wide average salary.)
+
+-- ------------------------------------------------------------
+-- 2. Subquery with IN
+-- ------------------------------------------------------------
+-- Used when the inner query returns multiple values, and the outer
+-- query checks membership against that list.
+--
+-- Example:
+--   SELECT name FROM employees
+--   WHERE department_id IN (
+--       SELECT id FROM departments WHERE location = 'New York'
+--   );
+
+-- ------------------------------------------------------------
+-- 3. Subquery with EXISTS
+-- ------------------------------------------------------------
+-- Checks whether the inner query returns ANY rows at all, rather than
+-- comparing specific values. Often more efficient than IN for large
+-- datasets, since the database can stop as soon as one matching row is
+-- found.
+--
+-- Example:
+--   SELECT name FROM departments d
+--   WHERE EXISTS (
+--       SELECT 1 FROM employees e WHERE e.department_id = d.id
+--   );
+--
+-- (Finds departments that have at least one employee.)
+
+-- ------------------------------------------------------------
+-- 4. Correlated Subquery
+-- ------------------------------------------------------------
+-- A subquery that references a column from the outer query, meaning it
+-- is re-evaluated once for every row processed by the outer query
+-- (unlike a regular subquery, which runs once independently).
+--
+-- Example:
+--   SELECT e.name, e.salary
+--   FROM employees e
+--   WHERE e.salary > (
+--       SELECT AVG(salary) FROM employees
+--       WHERE department_id = e.department_id
+--   );
+--
+-- (Finds employees earning more than the average salary of THEIR OWN
+-- department, not the whole company.)
+
+-- ------------------------------------------------------------
+-- 5. Subquery in FROM Clause (Derived Table)
+-- ------------------------------------------------------------
+-- The result of a subquery is treated as a temporary table that the
+-- outer query can select from or join against. The derived table must
+-- be given an alias.
+--
+-- Example:
+--   SELECT department_id, avg_salary
+--   FROM (
+--       SELECT department_id, AVG(salary) AS avg_salary
+--       FROM employees
+--       GROUP BY department_id
+--   ) AS department_averages
+--   WHERE avg_salary > 50000;
+
+-- ------------------------------------------------------------
+-- 6. Subquery in SELECT Clause (Scalar Subquery)
+-- ------------------------------------------------------------
+-- A subquery that returns a single value, used directly as a computed
+-- column in the outer query's SELECT list.
+--
+-- Example:
+--   SELECT name,
+--          (SELECT department_name FROM departments d
+--           WHERE d.id = e.department_id) AS department
+--   FROM employees e;
+
+-- ------------------------------------------------------------
+-- Why This Matters in Interviews
+-- ------------------------------------------------------------
+-- Subquery questions test the ability to break a complex requirement
+-- ("employees earning above their department's average") into smaller
+-- pieces, and to recognize when a correlated subquery, EXISTS, or a
+-- join would be the more efficient or more readable choice.

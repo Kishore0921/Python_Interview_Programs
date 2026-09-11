@@ -1,0 +1,94 @@
+-- ============================================================
+-- Topic: GROUP BY, Aggregate Functions, and HAVING
+-- ============================================================
+--
+-- GROUP BY collapses multiple rows that share a common value into a
+-- single summary row, typically used alongside aggregate functions to
+-- compute statistics per group (e.g. total sales per region, average
+-- salary per department).
+
+-- ------------------------------------------------------------
+-- 1. Aggregate Functions
+-- ------------------------------------------------------------
+-- Functions that operate on a set of rows and return a single summary
+-- value:
+--   COUNT() -> number of rows
+--   SUM()   -> total of a numeric column
+--   AVG()   -> average of a numeric column
+--   MIN()   -> smallest value
+--   MAX()   -> largest value
+--
+-- Example (no grouping, summarizes the whole table):
+--   SELECT COUNT(*) AS total_employees, AVG(salary) AS avg_salary
+--   FROM employees;
+
+-- ------------------------------------------------------------
+-- 2. GROUP BY
+-- ------------------------------------------------------------
+-- Groups rows sharing the same value in one or more columns, so
+-- aggregate functions compute a result PER GROUP rather than for the
+-- whole table.
+--
+-- Syntax:
+--   SELECT column, AGGREGATE_FUNCTION(other_column)
+--   FROM table_name
+--   GROUP BY column;
+--
+-- Example:
+--   SELECT department_id, AVG(salary) AS avg_salary
+--   FROM employees
+--   GROUP BY department_id;
+--
+-- (Every non-aggregated column in the SELECT list must appear in the
+-- GROUP BY clause — this is a common source of errors for beginners.)
+
+-- ------------------------------------------------------------
+-- 3. GROUP BY with Multiple Columns
+-- ------------------------------------------------------------
+-- Groups are formed based on the combination of all listed columns.
+--
+-- Example:
+--   SELECT department_id, job_title, COUNT(*) AS employee_count
+--   FROM employees
+--   GROUP BY department_id, job_title;
+
+-- ------------------------------------------------------------
+-- 4. HAVING
+-- ------------------------------------------------------------
+-- Filters groups AFTER aggregation has been performed — this is the
+-- key difference from WHERE, which filters individual rows BEFORE
+-- grouping happens. You cannot use an aggregate function inside a
+-- WHERE clause; HAVING exists specifically to fill that gap.
+--
+-- Syntax:
+--   SELECT column, AGGREGATE_FUNCTION(other_column)
+--   FROM table_name
+--   GROUP BY column
+--   HAVING condition_on_aggregate;
+--
+-- Example:
+--   SELECT department_id, AVG(salary) AS avg_salary
+--   FROM employees
+--   GROUP BY department_id
+--   HAVING AVG(salary) > 50000;
+
+-- ------------------------------------------------------------
+-- 5. Combining WHERE, GROUP BY, HAVING, and ORDER BY
+-- ------------------------------------------------------------
+-- The logical order of execution is:
+--   FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY
+--
+-- Example:
+--   SELECT department_id, COUNT(*) AS employee_count
+--   FROM employees
+--   WHERE salary > 30000          -- filters rows first
+--   GROUP BY department_id        -- then groups the filtered rows
+--   HAVING COUNT(*) > 5           -- then filters the resulting groups
+--   ORDER BY employee_count DESC; -- finally sorts the output
+
+-- ------------------------------------------------------------
+-- Why This Matters in Interviews
+-- ------------------------------------------------------------
+-- GROUP BY / HAVING questions test whether a candidate understands SQL's
+-- logical execution order — especially the WHERE vs. HAVING distinction,
+-- which is one of the most frequently asked SQL interview questions.
