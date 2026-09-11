@@ -313,8 +313,8 @@ python filename.py
 - [x] 13_OOP
 - [x] 14_Searching
 - [x] 15_Sorting
-- [ ] 16_DSA_Basics
-- [ ] 17_SQL_Programs
+- [x] 16_DSA_Basics
+- [x] 17_SQL_Programs
 
 
 ---
